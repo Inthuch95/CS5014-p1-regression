@@ -32,12 +32,11 @@ train_set, test_set = train_test_split(energy, test_size=0.2, random_state=42)
 X_train = train_set.drop("Appliances", axis=1)
 y_train = train_set["Appliances"].copy()
 
-attribs = list(X_train)
 full_pipeline = Pipeline([
         ("selector", DataFrameSelector(list(X_train))),
-        ("std_scaler", StandardScaler()),
+        ("std_scaler", StandardScaler())
     ])
 
 X_train = full_pipeline.fit_transform(X_train)
-np.savetxt("../X_train", X_train)
-np.savetxt("../y_train", y_train)
+np.savetxt("../X_train.txt", X_train)
+np.savetxt("../y_train.txt", y_train)
