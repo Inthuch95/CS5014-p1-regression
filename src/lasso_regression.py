@@ -26,7 +26,7 @@ X_train = full_pipeline.fit_transform(X_train)
 X_test = full_pipeline.fit_transform(X_test)
 
 print("Training with Lasso regression")
-lasso_reg = Lasso(alpha=0.1)
+lasso_reg = Lasso(alpha=1.0)
 lasso_reg.fit(X_train, y_train)
 joblib.dump(lasso_reg, "../lasso_reg.pkl")
 scores = get_scores(lasso_reg, X_train, y_train)
