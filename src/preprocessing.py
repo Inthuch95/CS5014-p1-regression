@@ -1,14 +1,14 @@
 '''
 Created on Mar 8, 2018
 '''
-import pandas as pd
-import numpy as np
 from sklearn.model_selection import train_test_split
+from sklearn.pipeline import Pipeline, FeatureUnion
+from sklearn.preprocessing import StandardScaler
 from util.df_selector import DataFrameSelector
 from util.attributes_util import add_attributes_from_dates
 from util.label import MyLabelBinarizer
-from sklearn.pipeline import Pipeline, FeatureUnion
-from sklearn.preprocessing import StandardScaler
+import pandas as pd
+import numpy as np
 
 print("Loading energy dataset")
 df = pd.read_csv("../energydata_complete.csv")
